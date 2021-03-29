@@ -15,7 +15,7 @@ function App() {
       <h2>hey</h2>
       <Switch>
         <Route exact path="/">
-          <Home posts={posts} setPosts={setPosts} toggleFetch={toggleFetch} setToggleFetch={setToggleFetch}/>
+          <Home posts={posts} setPosts={setPosts} setToggleFetch={setToggleFetch}/>
         </Route>
         <Route exact path="/add-post">
           <CreatePost posts={posts} setPosts={setPosts} toggleFetch={toggleFetch} setToggleFetch={setToggleFetch}/>
@@ -27,6 +27,7 @@ function App() {
           <PostDetail posts={posts} setPosts={setPosts} toggleFetch={toggleFetch} setToggleFetch={setToggleFetch}/>
         </Route>
       </Switch>
+
     </div>
   );
 }
