@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 
 import "./Home.css";
+
 import Post from "../../components/Post/Post";
+
 import Layout from "../../components/shared/Layout/Layout"
+
 
 
 const Home = (props) => {
