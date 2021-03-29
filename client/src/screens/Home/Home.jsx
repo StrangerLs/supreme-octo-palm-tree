@@ -1,5 +1,11 @@
+import { Link } from "react-router-dom";
+
 import "./Home.css";
+
+import Post from "../../components/Post/Post";
+
 import Layout from "../../components/shared/Layout/Layout"
+
 
 
 const Home = (props) => {
@@ -11,11 +17,7 @@ const Home = (props) => {
     <main>
       <Layout>
       {posts.map((post, index) => (
-        <div key={index}>
-          <p>{post.name}</p>
-          <img src={post.imgURL} alt="post-image" width="300px"/>
-          <p>{post.content}</p>
-        </div>
+        <Post post={post} key={index} />
       ))}
         </Layout>
     </main>
