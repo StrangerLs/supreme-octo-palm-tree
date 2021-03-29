@@ -1,4 +1,5 @@
 import "./Home.css";
+import Post from "../../components/Post/Post";
 
 
 const Home = (props) => {
@@ -8,11 +9,7 @@ const Home = (props) => {
   return (
     <main>
       {posts.map((post, index) => (
-        <div key={index}>
-          <p>{post.name}</p>
-          <img src={post.imgURL} alt="post-image" width="300px"/>
-          <p>{post.content}</p>
-        </div>
+        <Post post={post} key={index} />
       ))}
     </main>
   )
