@@ -1,4 +1,7 @@
-const Post = new Schema(
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+
+const Content = new Schema(
   {
     name: { type: String, required: true },
     imgURL: { type: String, required: true },
@@ -6,3 +9,5 @@ const Post = new Schema(
   },
   { timestamps: true }
 )
+
+module.exports = mongoose.model('contents', Content)
