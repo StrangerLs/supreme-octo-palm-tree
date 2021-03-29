@@ -15,7 +15,7 @@ function Post(props) {
         width="300px"
         className="post-image"
       />
-      <p className="post-content">{post.content}</p>
+      <p className="post-content">{post.post}</p>
     </article>
   );
 }
