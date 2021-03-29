@@ -3,9 +3,10 @@ const Schema = mongoose.Schema
 
 const Content = new Schema(
   {
-    name: { type: String, required: true },
+    title: {type: String, required: true},
+    author: { type: String, required: true },
     imgURL: { type: String, required: true },
-    content: { type: String, required: true }
+    post: { type: String, required: true }
   },
   { timestamps: true }
 )
