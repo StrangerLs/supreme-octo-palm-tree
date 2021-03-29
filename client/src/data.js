@@ -9,5 +9,6 @@ const posts = [
     "imgURL": "https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9",
     "content": "Yay cats!"
   }
-
 ]
+
+export default posts;
