@@ -9,7 +9,7 @@ const Nav = () => {
             <div className="nav">
                 <NavLink className="logo" to="/">Supreme-Octo-Palm-Tree</NavLink>
                 <div className="links">
-                    {/* <NavLink className="link" to="/add-post">Add Post</NavLink> */}
+                    <NavLink className="link" to="/add-post">Add Post</NavLink>
                 </div>
             </div>
         </nav>
