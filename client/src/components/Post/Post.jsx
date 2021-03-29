@@ -8,14 +8,14 @@ function Post(props) {
       <Link to={`/posts/${post.id}`}>
         <h2 className="post-title">{post.title}</h2>
       </Link>
-      <h3 className="post-name">{post.name}</h3>
+      <h3 className="post-author">{post.author}</h3>
       <img
         src={post.imgURL}
         alt="post-image"
         width="300px"
         className="post-image"
       />
-      <p className="post-content">{post.content}</p>
+      <p className="post-content">{post.post}</p>
     </article>
   );
 }
