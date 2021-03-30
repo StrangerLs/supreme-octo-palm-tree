@@ -29,7 +29,7 @@ const Home = (props) => {
     <main>
       <Layout>
         {allContents.map((content, index) => (
-          <Post post={content} key={index} />
+          <Post post={content} key={content._id} index={index} />
         ))}
       </Layout>
     </main>

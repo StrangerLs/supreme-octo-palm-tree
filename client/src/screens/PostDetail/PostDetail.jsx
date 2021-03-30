@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getContent, deleteContent } from '../../services/contents';
 import Layout from "../../components/shared/Layout/Layout";
 
-function PostDetail(props) {
+const PostDetail = (props) => {
   const [post, setPost] = useState(null);
   const [isLoaded, setLoaded] = useState(false)
-  const { id } = useParams()
-  const posts = props.posts
+  const { id }  = useParams()
+  // const posts = props.posts
   useEffect(() => {
-    const foundProduct = posts.find(post => post.id === id)
-    setPost(foundProduct);
-    setLoaded(true)
+    const fetchContent = async () => {
+      const content = await getContent(id)
+      setPost(content);
+      setLoaded(true)
+    }
+    fetchContent()
   }, [id])
 
   if (!isLoaded) {
@@ -18,14 +22,14 @@ function PostDetail(props) {
   }
 
   return (
-    <div>
-      <Layout>
+    <Layout>
+        <div>
         <h2>{post.title}</h2>
         <h3>{post.author}</h3>
         <img src={post.imgURL} width="300px" />
         <p>{post.post}</p>
+    </  div>
       </Layout>
-    </div>
   )
 }
 

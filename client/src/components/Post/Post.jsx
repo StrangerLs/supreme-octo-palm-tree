@@ -5,7 +5,7 @@ function Post(props) {
   const post = props.post;
   return (
     <article className="blog-post">
-      <Link to={`/posts/${post.id}`}>
+      <Link to={`/posts/${post._id}`}>
         <h2 className="post-title">{post.title}</h2>
       </Link>
       <h3 className="post-author">{post.author}</h3>
