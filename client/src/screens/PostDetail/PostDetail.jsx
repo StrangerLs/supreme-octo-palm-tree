@@ -1,22 +1,28 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
+import { getContent, deleteContent } from "../../services/contents"
 
 function PostDetail(props) {
   const [post, setPost] = useState(null);
   const [isLoaded, setLoaded] = useState(false)
   const { id } = useParams()
-  const posts = props.posts
+  
+  
   useEffect(() => {
-    const foundProduct = posts.find(post => post.id === id)
-    setPost(foundProduct);
-    setLoaded(true)
+
+    const getPost = async () => {
+      const postDetails = await getContent(id)
+      setPost(postDetails)
+      setLoaded(true)
+    }
+
+    getPost()
   }, [id])
 
   if (!isLoaded) {
     return <h1>NO POST FOUND</h1>
   }
-
   return (
     <div>
       <Layout>
