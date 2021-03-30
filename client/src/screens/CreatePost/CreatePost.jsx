@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./CreatePost.css";
 import Layout from "../../components/shared/Layout/Layout";
-import { Redirect } from "react-router-dom";
 // import e from "cors";
+import { Redirect } from 'react-router-dom'
 
 function CreatePost(props) {
   console.log(props.posts)
@@ -29,6 +29,10 @@ function CreatePost(props) {
     const created = props.setPosts([...props.posts, newPost])
     setCreated({ created })
   }
+
+  if (created) {
+    return <Redirect to={`/`} />
+}
 
   return (
     <div>
