@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./CreatePost.css";
 import Layout from "../../components/shared/Layout/Layout";
-// import e from "cors";
+import { createContent } from "../../services/contents";
 import { Redirect } from 'react-router-dom'
 
 function CreatePost(props) {
@@ -24,9 +24,9 @@ function CreatePost(props) {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    const created = props.setPosts([...props.posts, newPost])
+    const created = await createContent(newPost)
     setCreated({ created })
   }
 
