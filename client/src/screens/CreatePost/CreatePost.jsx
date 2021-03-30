@@ -4,8 +4,7 @@ import Layout from "../../components/shared/Layout/Layout";
 import { createContent } from "../../services/contents";
 import { Redirect } from 'react-router-dom'
 
-function CreatePost(props) {
-  console.log(props.posts)
+function CreatePost() {
   const [created, setCreated] = useState("")
 
   const [newPost, setNewPost] = useState({
@@ -14,7 +13,6 @@ function CreatePost(props) {
     imgURL: "",
     post: "",
   });
-
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -38,12 +36,12 @@ function CreatePost(props) {
     <div>
       <Layout>
         <h3>Create Post Here</h3>
-        <form onSubmit={handleSubmit}>
-          <input type="text" name="title" value={newPost.title} onChange={handleChange} placeholder="title"/>
-          <input type="text" name="author" value={newPost.author} onChange={handleChange} placeholder="author"/>
-          <input type="text" name="imgURL" value={newPost.imgURL} onChange={handleChange} placeholder="imgURL"/>
-          <input type="text" name="post" value={newPost.post} onChange={handleChange} placeholder="post"/>
-          <button type="submit">submit</button>
+        <form onSubmit={handleSubmit} className="form-container">
+          <input type="text" name="title" value={newPost.title} onChange={handleChange} placeholder="title" className="title-input"/>
+          <input type="text" name="author" value={newPost.author} onChange={handleChange} placeholder="author" className="author-input"/>
+          <input type="text" name="imgURL" value={newPost.imgURL} onChange={handleChange} placeholder="image URL" className="img-input"/>
+          <textarea name="post" value={newPost.post} onChange={handleChange} placeholder="write your thoughts here..." rows="6" className="post-input"/>
+          <button type="submit" className="submit-button">submit</button>
         </form>
       </Layout>
     </div>
