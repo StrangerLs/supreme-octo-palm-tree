@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
 import { getContent, deleteContent } from "../../services/contents"
 
@@ -7,6 +7,7 @@ function PostDetail(props) {
   const [post, setPost] = useState(null);
   const [isLoaded, setLoaded] = useState(false)
   const { id } = useParams()
+  const history = useHistory()
   
   
   useEffect(() => {
@@ -20,6 +21,14 @@ function PostDetail(props) {
     getPost()
   }, [id])
 
+  const handleSub = (e) => {
+    e.preventDefault()
+    deleteContent(post._id)
+    history.push('/')
+  }
+
+  
+
   if (!isLoaded) {
     return <h1>NO POST FOUND</h1>
   }
@@ -30,6 +39,7 @@ function PostDetail(props) {
         <h3>{post.author}</h3>
         <img src={post.imgURL} width="300px" />
         <p>{post.post}</p>
+        <button onClick={handleSub}>Delete</button>
       </Layout>
     </div>
   )
