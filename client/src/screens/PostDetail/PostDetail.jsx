@@ -3,24 +3,27 @@ import { useParams } from "react-router-dom";
 import { getContent, deleteContent } from '../../services/contents';
 import Layout from "../../components/shared/Layout/Layout";
 
+
 const PostDetail = (props) => {
   const [post, setPost] = useState(null);
   const [isLoaded, setLoaded] = useState(false)
-  const { id }  = useParams()
-  // const posts = props.posts
+  const { id } = useParams()
+  
+  
   useEffect(() => {
-    const fetchContent = async () => {
-      const content = await getContent(id)
-      setPost(content);
+
+    const getPost = async () => {
+      const postDetails = await getContent(id)
+      setPost(postDetails)
       setLoaded(true)
     }
-    fetchContent()
+
+    getPost()
   }, [id])
 
   if (!isLoaded) {
     return <h1>NO POST FOUND</h1>
   }
-
   return (
     <Layout>
         <div>
@@ -28,6 +31,7 @@ const PostDetail = (props) => {
         <h3>{post.author}</h3>
         <img src={post.imgURL} width="300px" />
         <p>{post.post}</p>
+        <button onClick={() => deleteContent(post._id)}>Delete</button>
     </  div>
       </Layout>
   )

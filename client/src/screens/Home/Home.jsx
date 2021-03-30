@@ -16,6 +16,7 @@ const Home = (props) => {
   // const setPosts = props.setPosts;
   // console.log(props)
   const [allContents, setAllContents] = useState([])
+  const { posts } = props
 
   useEffect(() => {
     const fetchContents = async () => {
@@ -24,12 +25,13 @@ const Home = (props) => {
     }
     fetchContents()
   }, [])
-
+console.log(allContents)
   return (
     <main>
       <Layout>
         {allContents.map((content, index) => (
-          <Post post={content} key={content._id} index={index} />
+          <Post post={content} key={content._id}
+            index={index}/>
         ))}
       </Layout>
     </main>

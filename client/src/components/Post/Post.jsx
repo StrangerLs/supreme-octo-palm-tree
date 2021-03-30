@@ -3,6 +3,7 @@ import "./Post.css";
 
 function Post(props) {
   const post = props.post;
+ 
   return (
     <article className="blog-post">
       <Link to={`/posts/${post._id}`}>
