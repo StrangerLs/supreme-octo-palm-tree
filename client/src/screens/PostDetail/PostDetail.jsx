@@ -31,7 +31,6 @@ const PostDetail = (props) => {
     deleteContent(post._id)
     props.setToggleFetch((curr) => !curr)
     history.push('/')
-    
   }
 
   
