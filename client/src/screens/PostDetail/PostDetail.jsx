@@ -13,7 +13,7 @@ const PostDetail = (props) => {
   const [isLoaded, setLoaded] = useState(false)
   const { id } = useParams()
   const history = useHistory()
-  
+  const [toggleFetch, setToggleFetch] = useState(false)
   
   useEffect(() => {
 
@@ -29,7 +29,9 @@ const PostDetail = (props) => {
   const handleSub = (e) => {
     e.preventDefault()
     deleteContent(post._id)
+    props.setToggleFetch((curr) => !curr)
     history.push('/')
+    
   }
 
   

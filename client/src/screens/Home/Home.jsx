@@ -16,7 +16,7 @@ const Home = (props) => {
   // const setPosts = props.setPosts;
   // console.log(props)
   const [allContents, setAllContents] = useState([])
-  const { posts } = props
+  
 
   useEffect(() => {
     const fetchContents = async () => {
@@ -24,8 +24,9 @@ const Home = (props) => {
       setAllContents(contents)
     }
     fetchContents()
-  }, [])
-console.log(allContents)
+  }, [props.toggleFetch])
+
+  
   return (
     <main>
       <Layout>
