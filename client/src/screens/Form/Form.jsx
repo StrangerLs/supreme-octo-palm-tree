@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Form.css";
 import Layout from "../../components/shared/Layout/Layout";
-import { createContent, getContent } from "../../services/contents";
+import { createContent, getContent, updateContent } from "../../services/contents";
 import { useParams, Redirect } from 'react-router-dom'
 
 function Form() {
@@ -37,7 +37,7 @@ function Form() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     if (id) {
-      const updated = await updateContent(id, content);
+      const updated = await updateContent(id, newPost);
     setUpdated(updated);
     } else {
       const created = await createContent(newPost)
@@ -47,7 +47,11 @@ function Form() {
 
   if (created) {
     return <Redirect to={`/`} />
-}
+  }
+  
+  if (isUpdated) {
+    return <Redirect to={`/posts/${id}`} />
+  }
 
   return (
     <div>
