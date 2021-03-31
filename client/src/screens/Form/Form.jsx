@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CreatePost.css";
+import "./Form.css";
 import Layout from "../../components/shared/Layout/Layout";
 import { createContent } from "../../services/contents";
 import { Redirect } from 'react-router-dom'
