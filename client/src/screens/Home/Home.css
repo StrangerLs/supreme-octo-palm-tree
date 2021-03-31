@@ -1,0 +1,22 @@
+html {
+  background-color: #6386B9;
+}
+
+.blog-post{
+  display: flex;
+  flex-direction: column;
+  color: #5F4D42;
+  border: 10px solid #ABB79C;
+  width: fit-content;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #DACDBB;
+}
+
+a {
+  text-decoration: none;
+}
+
+.post-title {
+  color: #6386B9;
+}
