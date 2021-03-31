@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Form.css";
 import Layout from "../../components/shared/Layout/Layout";
-import { createContent } from "../../services/contents";
+import { createContent, getContent } from "../../services/contents";
 import { useParams, Redirect } from 'react-router-dom'
 
 function Form() {
@@ -17,6 +17,14 @@ function Form() {
   const [isUpdated, setUpdated] = useState(false);
   let { id } = useParams();
   console.log(id)
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      const content = await getContent(id);
+      setNewPost(content);
+    };
+    fetchContent();
+  }, [id]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
