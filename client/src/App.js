@@ -19,7 +19,7 @@ function App() {
           <Form />
         </Route>
         <Route exact path="/posts/:id/edit">
-          <EditPost />
+          <Form />
         </Route>
         <Route exact path="/posts/:id">
           <PostDetail setToggleFetch={setToggleFetch}/>
