@@ -1,8 +1,7 @@
 import "./App.css";
 import { useState, React } from "react";
 import { Route, Switch } from "react-router-dom";
-import CreatePost from "./screens/CreatePost/CreatePost";
-import EditPost from "./screens/EditPost/EditPost";
+import Form from "./screens/Form/Form";
 import Home from "./screens/Home/Home";
 import PostDetail from "./screens/PostDetail/PostDetail";
 
@@ -16,10 +15,10 @@ function App() {
           <Home toggleFetch={toggleFetch}/>
         </Route>
         <Route exact path="/add-post">
-          <CreatePost />
+          <Form />
         </Route>
         <Route exact path="/posts/:id/edit">
-          <EditPost />
+          <Form />
         </Route>
         <Route exact path="/posts/:id">
           <PostDetail setToggleFetch={setToggleFetch}/>
