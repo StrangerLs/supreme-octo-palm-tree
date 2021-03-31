@@ -36,8 +36,13 @@ function Form() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const created = await createContent(newPost)
-    setCreated({ created })
+    if (id) {
+      const updated = await updateContent(id, content);
+    setUpdated(updated);
+    } else {
+      const created = await createContent(newPost)
+      setCreated({ created })
+    }
   }
 
   if (created) {
