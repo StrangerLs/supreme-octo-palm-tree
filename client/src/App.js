@@ -10,7 +10,7 @@ function App() {
   const [toggleFetch, setToggleFetch] = useState(false);
   return (
     <div className="App">
-      <h2>hey</h2>
+      <h2 style={{ color: "#ABB79C", fontSize:"40px" }}>hey</h2>
       <Switch>
         <Route exact path="/">
           <Home toggleFetch={toggleFetch}/>
@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/posts/:id">
           <PostDetail setToggleFetch={setToggleFetch}/>
         </Route>
-      </Switch>
+      </Switch>2
 
     </div>
   );

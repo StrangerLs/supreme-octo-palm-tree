@@ -1,0 +1,30 @@
+* {
+  font-family: 'Comfortaa', cursive;
+}
+nav {
+  background-color: #ABB79C;
+  text-align: center;
+  padding-bottom:20px;
+  padding-top: 7px;
+}
+nav h1 {
+  font-size: 50px;
+  color:whitesmoke;
+}
+nav h3 {
+  color:white;
+  font-size: 25px;
+}
+nav a {
+  text-decoration: none;
+  color: #6386B9;
+
+}
+.links{
+  list-style-type: none;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  font-size: 30px;
+  text-decoration: none;
+}
