@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./Form.css";
 import Layout from "../../components/shared/Layout/Layout";
 import { createContent } from "../../services/contents";
-import { Redirect } from 'react-router-dom'
+import { useParams, Redirect } from 'react-router-dom'
 
-function CreatePost() {
+function Form() {
   const [created, setCreated] = useState("")
 
   const [newPost, setNewPost] = useState({
@@ -13,6 +13,10 @@ function CreatePost() {
     imgURL: "",
     post: "",
   });
+
+  const [isUpdated, setUpdated] = useState(false);
+  let { id } = useParams();
+  console.log(id)
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -48,4 +52,4 @@ function CreatePost() {
   );
 }
 
-export default CreatePost;
+export default Form;
