@@ -67,10 +67,10 @@ function Form() {
       <Layout>
         <h3>Create Post Here</h3>
         <form onSubmit={handleSubmit} className="form-container">
-          <input type="text" name="title" value={post.title} onChange={handleChange} placeholder="title" className="title-input"/>
-          <input type="text" name="author" value={post.author} onChange={handleChange} placeholder="author" className="author-input"/>
-          <input type="text" name="imgURL" value={post.imgURL} onChange={handleChange} placeholder="image URL" className="img-input"/>
-          <textarea name="post" value={post.post} onChange={handleChange} placeholder="write your thoughts here..." rows="6" className="post-input"/>
+          <input required type="text" name="title" value={post.title} onChange={handleChange} placeholder="title" className="title-input"/>
+          <input required type="text" name="author" value={post.author} onChange={handleChange} placeholder="author" className="author-input"/>
+          <input required type="text" name="imgURL" value={post.imgURL} onChange={handleChange} placeholder="image URL" className="img-input"/>
+          <textarea required name="post" value={post.post} onChange={handleChange} placeholder="write your thoughts here..." rows="6" className="post-input"/>
           <button type="submit" className="submit-button">submit</button>
         </form>
       </Layout>
